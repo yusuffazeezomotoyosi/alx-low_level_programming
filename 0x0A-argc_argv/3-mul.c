@@ -1,21 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 /**
- * main - Entry Point
- * @a: number of args
- * @b: pointer to args
- * Return: 1 for error, 0 not
+ * main - Entry point
+ *
+ * @argc: Counts the number of parameters that go into main
+ * @argv: Pointer of array of pointers containing strings entering main
+ * Return: Always 0 (Success)
  */
-int main(int a, char **b)
+int main(int argc, char **argv)
 {
-  if (a < 3)
-    {
-      printf("Error\n");
-      return (1);
-    }
-  
-  printf("%d\n", atoi(*(b + 1)) * atoi(*(b + 2)));
+	int n, ex;
 
-  return (0);
+	ex = 0;
+	if (argc != 3)
+	{
+		printf("%s\n", "Error");
+		ex = 1;
+	}
+	else
+	{
+		n = atoi(argv[1]) * atoi(argv[2]);
+		printf("%i\n", n);
+	}
+	return (ex);
 }
-

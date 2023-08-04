@@ -1,13 +1,16 @@
 #include <stdio.h>
+#include <stdlib.h>
+
 /**
- * main - Entry Point
- * @a: number of args
- * @b: pointer to args
+ * main - Entry point
+ *
+ * @argc: Counts the number of parameters that go into main
+ * @argv: Pointer of array of pointers containing strings entering main
  * Return: Always 0 (Success)
  */
-int main(int a, char **b)
+int main(int argc, char **argv)
 {
-  (void)a;
-  printf("%s\n", *b);
-  return (0);
+	if (argc > 0)
+		printf("%s\n", argv[0]);
+	return (0);
 }
