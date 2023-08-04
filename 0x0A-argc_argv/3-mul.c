@@ -1,57 +1,18 @@
 #include <stdio.h>
-
+#include <stdlib.h>
 /**
- * main - Entry point
- *
- * @argc: incoming argument
- * @argv: incoming argument
- *
- * Return: Always 0 (Success)
+ * main - Entry Point
+ * @a: number of args
+ * @b: pointer to args
+ * Return: 1 for error, 0 not
  */
-int main(int argc, char **argv)
+int main(int a, char **b)
 {
-
-  int total;
-
-  if (argc < 2)
+  if (a < 3)
     {
       printf("Error\n");
       return (1);
     }
-
-  total = (int) *argv[1] * (int) *argv[2];
-
-  printf("%d\n", total);
-
+  printf("%d\n", atoi(*(b + 1)) * atoi(*(b + 2)));
   return (0);
-
-}
-
-#include <stdio.h>
-
- /**
-  * main - Entry point
-  *
-  * @argc: incoming argument
-  * @argv: incoming argument
-  *
-  * Return: Always 0 (Success)
-  */
-int main(int argc, char **argv)
-{
-
-  int total;
-
-  if (argc < 2)
-    {
-      printf("Error\n");
-      return (1);
-    }
-
-  total = (int) *argv[1] * (int) *argv[2];
-
-  printf("%d\n", total);
-
-  return (0);
-
 }
