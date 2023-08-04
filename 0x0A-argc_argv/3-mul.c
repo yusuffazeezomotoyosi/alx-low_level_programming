@@ -13,6 +13,9 @@ int main(int a, char **b)
       printf("Error\n");
       return (1);
     }
+  
   printf("%d\n", atoi(*(b + 1)) * atoi(*(b + 2)));
+
   return (0);
 }
+
