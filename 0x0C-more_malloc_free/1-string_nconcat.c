@@ -1,6 +1,3 @@
-#include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
 /**
  * string_nconcat- concatenate 2 strings, the size of 2nd string is defined.
  * @s1: string 1.
