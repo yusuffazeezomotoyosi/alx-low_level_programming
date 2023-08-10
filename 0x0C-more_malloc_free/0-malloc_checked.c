@@ -1,18 +1,20 @@
-#include <stdio.h>
+#include "main.h"
 #include <stdlib.h>
+#include <std.io>
+
 /**
- * malloc_checked - allocates memory using malloc.
- * @b: size of new memory array.
+ * malloc_checked -  allocates memory using malloc.
+ * @b: size
  *
- *
- * Return: the string initialized.
+ * Return: Pointer to allocated memory or normal process termination
+ * with a status value of 98
  */
 void *malloc_checked(unsigned int b)
 {
-	void *memLoc;
+	void *p;
 
-	memLoc = malloc(b);
-	if (memLoc == NULL)
+	p = malloc(b);
+	if (p == 0)
 		exit(98);
-	return (memLoc);
+	return (p);
 }
