@@ -9,7 +9,7 @@
 
 int get_bit(unsigned long int n, unsigned int i)
 {
-	if (i > 63)
+	if (i> 63)
 		return (-1);
 
 	return ((n >> i) & 1);
