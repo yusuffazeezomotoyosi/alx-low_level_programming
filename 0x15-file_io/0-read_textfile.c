@@ -6,6 +6,8 @@
  * @text_content: pointer to a string to write to the file
  * Return: 1 (success) Otherwise - 1 (fails)
  */
+
+
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int op;
