@@ -1,37 +1,35 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
- * create_file - creates a file.
- * @filename: pointer to the name of the file to create
- * @text_content: pointer to a string to write to the file
- * Return: 1 (success) Otherwise - 1 (fails)
+ * read_textfile - Reads a text file and prints it to POSIX stdout.
+ * @filename: A pointer to the name of the file.
+ * @letters: The number of letters the
  */
-
-
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int op;
-	ssize_t re, wri;
-	char *buff;
+	ssize_t o, r, w;
+	char *buffer;
 
-	if (!filename)
+	if (filename == NULL)
 		return (0);
 
-	op = open(filename, O_RDONLY);
-
-	if (op == -1)
+	buffer = malloc(sizeof(char) * letters);
+	if (buffer == NULL)
 		return (0);
 
-	buff = malloc(sizeof(char) * (letters));
-	if (!buff)
+	o = open(filename, O_RDONLY);
+	r = read(o, buffer, letters);
+	w = write(STDOUT_FILENO, buffer, r);
+
+	if (o == -1 || r == -1 || w == -1 || w != r)
+	{
+		free(buffer);
 		return (0);
+	}
 
-	re = read(op, buff, letters);
-	wri = write(STDOUT_FILENO, buff, re);
+	free(buffer);
+	close(o);
 
-	close(op);
-
-	free(buff);
-
-	return (wri);
+	return (w);
 }
